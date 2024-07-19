@@ -98,35 +98,19 @@ function writeLog(filePath, data) {
 // Add body-parser middleware to parse JSON data from requests
 router.use(bodyParser.json()); // Assuming you're using the main app instance (app)
 
-router.post("/login/", [
-  // Validate username
-  body('usernames')
-    .exists()
-    .withMessage('Username is required')
-    .trim()
-    .isEmail()
-    .withMessage('Invalid email format'),
-
-  // Validate password
-  body('password')
-    .exists()
-    .withMessage('Password is required')
-    .trim()
-    .isLength({ min: 5 })
-    .withMessage('Password must be at least 6 characters long')
-], async (req, res) => 
+router.post("/login/", async (req, res) => 
  {
   console.log(process.env.JWT_SECRET);
   const data = req.body; // Access data from req.body after body-parser parsing
   const username = data.name; // Assuming username for login
 
-  const { name, password } = req.body;
-  console.log(name,password);
-  // Validate input using express-validator
-  const errors = validationResult(req);
-  if (!errors.isEmpty()) {
-    return res.status(400).json({ errors: errors.mapped() });
-  }
+  // const { name, password } = req.body;
+  // console.log(name,password);
+  // // Validate input using express-validator
+  // const errors = validationResult(req);
+  // if (!errors.isEmpty()) {
+  //   return res.status(400).json({ errors: errors.mapped() });
+  // }
   
   try {
     const sql = `SELECT id,password FROM users WHERE name = ?`;

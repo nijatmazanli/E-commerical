@@ -44,6 +44,12 @@ async function getData() {
 }
 
 async function displayBasketItems() {
+  const isLogin = localStorage.getItem("user") || false;
+
+  if (!isLogin) {
+
+    window.location.href = "login.html";
+  } else {
   try {
     const products = await getData();
 
@@ -109,7 +115,7 @@ function createBasketItems(basketItems) {
     basketContainer.appendChild(basketItem);
   });
 }
-
+}
 const basketContainer = document.querySelector(".favoritesContainer");
 
 displayBasketItems();
