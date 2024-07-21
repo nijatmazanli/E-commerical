@@ -56,6 +56,7 @@ async function fetchData() {
   }
 }
 function createProductCards(products) {
+  console.log(products)
   products.forEach((product) => {
     const card = document.createElement("div");
     card.classList.add("product-card");
@@ -72,6 +73,11 @@ function createProductCards(products) {
     const productPrice = document.createElement("p");
     productPrice.textContent = `$${product.price}`; // Assuming 'price' property
     card.appendChild(productPrice);
+
+
+    const productDesc = document.createElement("h3");
+    productDesc.textContent = `${product.description}`; // Assuming 'price' property
+    card.appendChild(productDesc);
 
     // ... add more product details as needed ...
 

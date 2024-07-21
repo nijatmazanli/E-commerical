@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Input Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 5px;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-bottom: 15px;
+    }
+
+    .button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>Edit Product</h1>
+  <form id="productForm">
+    <label for="name">Name:</label>
+    <input type="text" id="name" name="name" required placeholder="Enter product name">
+
+    <label for="desc">Description:</label>
+    <textarea id="desc" name="desc" rows="4" required placeholder="Enter product description"></textarea>
+
+    <label for="price">Price:</label>
+    <input type="number" id="price" name="price" step="0.01" required placeholder="Enter product price (e.g., 19.99)">
+
+    <label for="stock">Stock:</label>
+    <input type="number" id="stock" name="stock" min="0" required placeholder="Enter product stock quantity">
+
+    <label for="img_link">Image Link:</label>
+    <input type="url" id="img_link" name="img_link" required placeholder="Enter the URL of the product image">
+
+    <button type="submit" class="button">Add Product</button>
+  </form>
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+<script src="./../../src/assets/js/newProduct.js" defer></script>
+</html>

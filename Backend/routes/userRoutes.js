@@ -6,6 +6,7 @@ const bcrypt = require("bcrypt"); // Password hashing library
 const jwt = require("jsonwebtoken");
 const cors = require("cors"); // Assuming you need CORS for frontend requests
 const { body, validationResult } = require('express-validator');
+const { get } = require("http");
 
 require("dotenv").config(); // Load environment variables at the beginning of your application
 
@@ -184,9 +185,25 @@ router.post("/register", async (req, res) => {
   // getdata()
 });
 
-router.post("/get-data", async (req, res) => {
-  const results = getdata();
+router.post("/update/users", async (req, res) => {
+  await getdata();
+  res.status(200).json({message:"Get data succesfull"})
 });
+
+
+router.get("/all-products", async (req, res) => {
+  console.log('dsdsdsdd')
+  try {
+    await getdata()
+    const data = readData()
+  
+    res.status(200).json(data)
+  } catch (err) {
+    console.error(err);
+    res.status(500).json({ message: err.message || "Error retrieving products." });
+  }
+});
+
 
 router.post("/logout/log", async (req, res) => {
   const data = req.body; // Access user data if needed

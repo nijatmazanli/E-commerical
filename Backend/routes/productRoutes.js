@@ -2,8 +2,9 @@ const router = require("express").Router();
 const fs = require("fs");
 const mysql = require("mysql2/promise");
 require('dotenv').config();
+const cors = require("cors")
 
-
+router.use(cors())
 const productsDbName = process.env.products_db_name;
 const productssDbPassword = process.env.products_db_password
 const db_host = process.env.db_host
@@ -98,6 +99,7 @@ router.get("/", async(req, res) => {
 // addDataToJson('./data/products.json', JSON.stringify(data));
 });
 router.get("/all-products", async (req, res) => {
+  console.log('dsdsdsdd')
   try {
     const data = readData()
   
@@ -112,8 +114,5 @@ router.post("/update/products", async (req,res)=>{
   res.status(200).json({message:"Updated database"})
 })
 
-router.delete("/delete",async(req,res)=>{
-  const data = req.data
-  console.log(data)
-})
+
 module.exports = router;

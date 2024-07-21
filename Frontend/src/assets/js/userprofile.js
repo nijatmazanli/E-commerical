@@ -3,6 +3,7 @@ const logoutButton = document.querySelector("#logout") || null;
 const isLoggedIn = localStorage.getItem("user") !== null; // Use strict comparison
 const username = localStorage.getItem("username") || ""; // Set default to empty string
 
+
 if (!isLoggedIn) {
   alert("Please login first");
   window.location.href = "/login.html";
@@ -69,6 +70,22 @@ if (!isLoggedIn) {
       loginContainer.appendChild(login);
       loginContainer.appendChild(register);
     }
+  }
+  const about = document.querySelector(".about")
+  async function showdata(){
+    const userData = {
+      username: localStorage.getItem("username"),
+      userId: localStorage.getItem("userID"),
+      token: localStorage.getItem("user"),
+      basket: localStorage.getItem("basket") || [],
+      favorites: localStorage.getItem("favorites")
+    };
+    const profileName = document.createElement("h1")
+    profileName.textContent = "Sasasasa"
+    about.appendChild(profileName)
+const basketText = document.querySelector(".basket-text")
+const favoritesText = document.querySelector(".basket-text")
+
   }
 }
 

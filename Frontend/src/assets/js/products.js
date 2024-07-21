@@ -53,6 +53,7 @@ if (!isLoggedIn || username !== "admin") {
   }
 
   function createProductCards(products) {
+    console.log(products)
     products.forEach((product) => {
       const card = document.createElement("div");
       card.classList.add("product-card");
@@ -69,6 +70,9 @@ if (!isLoggedIn || username !== "admin") {
       const productPrice = document.createElement("p");
       productPrice.textContent = `$${product.price}`; // Assuming 'price' property
       card.appendChild(productPrice);
+      const productDesc = document.createElement("p");
+      productDesc.textContent = `${product.description}`; // Assuming 'price' property
+      card.appendChild(productDesc);
 
       // ... add more product details as needed ...
 
@@ -89,7 +93,21 @@ if (!isLoggedIn || username !== "admin") {
       addToFavoritesButton.dataset.productId = product.id; // Add product ID as a data attribute
       addToFavoritesButton.dataset.productName = product.name;
       addToFavoritesButton.dataset.productlink = product.img_link;
-      addToFavoritesButton.addEventListener("click", () =>{ axios.delete("http://localhost:6688/products/delete",product)});
+      addToFavoritesButton.addEventListener("click", () =>{ 
+        console.log(product)
+        axios.post("http://localhost:6688/admin/products/delete",product).then((response)=>{
+          if(response.data.message =="Product deleted successfully"){
+                axios.post("http://localhost:6688/products/update/products").then((responsess)=>{
+                  if(responsess.data.message == "Updated database"){
+                    window.location.href = "/admin/products.html";
+                    localStorage.removeItem("productData");
+                  }
+                })
+               
+              }
+            
+        })
+      });
 
       card.appendChild(addToBasketButton);
       card.appendChild(addToFavoritesButton);
@@ -97,7 +115,9 @@ if (!isLoggedIn || username !== "admin") {
     });
   }
 
-  const products = document.querySelector(".products");
-
+  const add = document.querySelector(".add")
+  add.addEventListener("click",()=>{
+    window.location.href = "./../admin/products/newProduct.html"
+  })
   fetchData();
 }

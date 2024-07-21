@@ -1,0 +1,105 @@
+{
+  "message": "1.5534000000000001 :: admin logged in time function getTime() { [native code] }"
+}
+{
+  "message": "undefined :: undefined logged out time eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEuNTUzNDAwMDAwMDAwMDAwMSwidXNlcm5hbWUiOiJhZG1pbiIsIm5hbWVoYXNoIjoiJDJiJDEwJFZBOVdoTHBrcUFrQzdRbXFXaktSTE8xUWhRcUZUQ2tDeTdiR2pWVEtJNG1UUVJ4LmtldE9pIiwiaWF0IjoxNzIxNDU3ODYyfQ.4f7aqZ6FiO30lFAoTwyTD17iE_qi2WLqBbfIFfl2d4Y"
+}
+{
+  "message": "1.7513999999999998 :: admin logged in time function getTime() { [native code] }"
+}
+{
+  "message": "1.7946 :: admin logged in time 1721459884997"
+}
+{
+  "message": "1.44 :: admin logged in time 1721459915800"
+}
+{
+  "message": "0.6732 :: admin logged in time 1721460008374"
+}
+{
+  "message": "1.2816 :: admin logged in time 1721460607712"
+}
+{
+  "message": "0.9198 :: admin logged in time 1721460609511"
+}
+{
+  "message": "undefined :: undefined logged out time 2024-07-20 11:35:17.458 token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjAuOTE5OCwidXNlcm5hbWUiOiJhZG1pbiIsIm5hbWVoYXNoIjoiJDJiJDEwJGFGTUQ0di8yNmo4V3RIeXo5Tkp0QS5JMDhmOUhqYWN6Z21Ud2gzRkN6WWcxZFc2NUZwc09DIiwiaWF0IjoxNzIxNDYwNjA5fQ.TmLFjnjNQQILlDFRnZSrLCwLJQRaxfGO-52XCd4exsU"
+}
+{
+  "message": "0.216 :: admin logged in time 2024-07-20 11:35:17.458 Token :: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjAuMjE2LCJ1c2VybmFtZSI6ImFkbWluIiwibmFtZWhhc2giOiIkMmIkMTAkU1hkR216NTdzVjRKcy5oamJkSmJpT2Z4U0dvQkw0a0w0RXhGSndna0ZyTEpvMGdoOWpCS3kiLCJpYXQiOjE3MjE0NjEwNzF9.LAUly_fXSGYURvqx_66VlO4KfosCT6qCRRiD-4hOKu8"
+}
+{
+  "message": "null :: admin logged out time 2024-07-20 11:35:17.458 token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjAuMjE2LCJ1c2VybmFtZSI6ImFkbWluIiwibmFtZWhhc2giOiIkMmIkMTAkU1hkR216NTdzVjRKcy5oamJkSmJpT2Z4U0dvQkw0a0w0RXhGSndna0ZyTEpvMGdoOWpCS3kiLCJpYXQiOjE3MjE0NjEwNzF9.LAUly_fXSGYURvqx_66VlO4KfosCT6qCRRiD-4hOKu8"
+}
+{
+  "message": "0.034 :: admin logged in time 2024-07-20 11:35:17.458 Token :: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjAuMDM0LCJ1c2VybmFtZSI6ImFkbWluIiwibmFtZWhhc2giOiIkMmIkMTAkTDVnQ2o3a2lvOFhuencyby5CcXhZT0xmZzd6WDlUbTZsVVlQWHZZNDNCYjJ2LmZLT3FXa2EiLCJpYXQiOjE3MjE0NjE3MTB9.kwrO6at1befOZ8PvJxLeUAZXafIVndU5bFI7gpx8zBI"
+}
+{
+  "message": "0.0708 :: admin logged in time 2024-07-21 10:01:24.500 Token :: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjAuMDcwOCwidXNlcm5hbWUiOiJhZG1pbiIsIm5hbWVoYXNoIjoiJDJiJDEwJEFSTy4vd1pKUllTRFJpV1UueWNraC5CaVVSQUpVSzBLUEVOUmV3LnZFeFpNMXFyNDNscnVtIiwiaWF0IjoxNzIxNTQxNzQwfQ.H9j6BIGJNr5y17rb4Sb3yH6Ca6B0TtYFWDdTSEDYJNo"
+}
+{
+  "message": "0.0275 :: admin logged in time 2024-07-21 12:32:23.043 Token :: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjAuMDI3NSwidXNlcm5hbWUiOiJhZG1pbiIsIm5hbWVoYXNoIjoiJDJiJDEwJGNJU29hOWN5Y2E5bTJ6QmdkU1pKR3VPam5GMkROTi42UXF5ZU9pcTBQVVdMN3VnbG5SeHQyIiwiaWF0IjoxNzIxNTUxNjE1fQ.N6b7945UZTOzNQOywTq0gQxxbf1urIOzmSTuaM5-NAE"
+}
+{
+  "message": "0.0275 :: admin logged out time 2024-07-21 12:32:23.043 token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjAuMDI3NSwidXNlcm5hbWUiOiJhZG1pbiIsIm5hbWVoYXNoIjoiJDJiJDEwJGNJU29hOWN5Y2E5bTJ6QmdkU1pKR3VPam5GMkROTi42UXF5ZU9pcTBQVVdMN3VnbG5SeHQyIiwiaWF0IjoxNzIxNTUxNjE1fQ.N6b7945UZTOzNQOywTq0gQxxbf1urIOzmSTuaM5-NAE"
+}
+{
+  "message": "0.0799 :: admin logged in time 2024-07-21 12:32:23.043 Token :: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjAuMDc5OSwidXNlcm5hbWUiOiJhZG1pbiIsIm5hbWVoYXNoIjoiJDJiJDEwJDdlUUFmdFZiZWVwY1ZTMWtUT25jeS5QeUdmMUNZWVVJVHN4aEVFVDZtWjVFd2RpakxXNUx5IiwiaWF0IjoxNzIxNTUxNjQyfQ._4e3jsGs1_crI5EgQ9f9zyR0uVnl3qL0EHDiVZarp64"
+}
+{
+  "message": "0.0799 :: admin logged out time 2024-07-21 12:32:23.043 token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjAuMDc5OSwidXNlcm5hbWUiOiJhZG1pbiIsIm5hbWVoYXNoIjoiJDJiJDEwJDdlUUFmdFZiZWVwY1ZTMWtUT25jeS5QeUdmMUNZWVVJVHN4aEVFVDZtWjVFd2RpakxXNUx5IiwiaWF0IjoxNzIxNTUxNjQyfQ._4e3jsGs1_crI5EgQ9f9zyR0uVnl3qL0EHDiVZarp64"
+}
+{
+  "message": "0.0123 :: admin logged in time 2024-07-21 12:32:23.043 Token :: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjAuMDEyMywidXNlcm5hbWUiOiJhZG1pbiIsIm5hbWVoYXNoIjoiJDJiJDEwJC9KdjdrQU40ZmtwTmp0Yk5QVjFkRS5HSHB4OFprMVdnTG1BTzB1ZTYyR1prWWR2d3VCLjk2IiwiaWF0IjoxNzIxNTUyMTY1fQ.8KUpFZPUsyHwg50lzR9E2-_SLhBlA3v6GogMe2KTJ5M"
+}
+{
+  "message": "null :: null logged out time 2024-07-21 12:32:23.043 token:null"
+}
+{
+  "message": "null :: null logged out time 2024-07-21 12:32:23.043 token:null"
+}
+{
+  "message": "0.0354 :: admin logged in time 2024-07-21 12:32:23.043 Token :: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjAuMDM1NCwidXNlcm5hbWUiOiJhZG1pbiIsIm5hbWVoYXNoIjoiJDJiJDEwJG8zc25KQ3VaTVFjS2x4c1dGeTdBci5KL1cwNzlwSWZiODdvd2sxRTdMQlU5UGFKcW1FQ3h5IiwiaWF0IjoxNzIxNTUyMjM3fQ.XdjVnctN3fCcg_d4MXzxVEikjz6JX363NLEGpp55Q_Y"
+}
+{
+  "message": "0.0322 :: admin logged in time 2024-07-21 12:57:22.935 Token :: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjAuMDMyMiwidXNlcm5hbWUiOiJhZG1pbiIsIm5hbWVoYXNoIjoiJDJiJDEwJFZuZ2F5TUY2T0lMQ1M5RVNWdjlGenViaHNoV21WMXg2OVR1TnlJeUNWMXNRM2d4YUN3NWxXIiwiaWF0IjoxNzIxNTUyMjU5fQ.cWJGlmMqbLCvEWWOORRIN-kGC_ioieFeOxiMFiHu4to"
+}
+{
+  "message": "0.0322 :: admin logged out time 2024-07-21 12:57:22.935 token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjAuMDMyMiwidXNlcm5hbWUiOiJhZG1pbiIsIm5hbWVoYXNoIjoiJDJiJDEwJFZuZ2F5TUY2T0lMQ1M5RVNWdjlGenViaHNoV21WMXg2OVR1TnlJeUNWMXNRM2d4YUN3NWxXIiwiaWF0IjoxNzIxNTUyMjU5fQ.cWJGlmMqbLCvEWWOORRIN-kGC_ioieFeOxiMFiHu4to"
+}
+{
+  "message": "0.0472 :: admin logged in time 2024-07-21 12:57:22.935 Token :: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjAuMDQ3MiwidXNlcm5hbWUiOiJhZG1pbiIsIm5hbWVoYXNoIjoiJDJiJDEwJG8zNU8zQUFtYXBEbGs2NnFjUDZkRnVORHhDem5vV0NUR1BFMUtkRERaUjB0SEhjL2h1Um9LIiwiaWF0IjoxNzIxNTUyMjY3fQ.6bhk0lQeN0no2sn3fTzpB78ztr7TmoOfDcIbx9CgTew"
+}
+{
+  "message": "0.0472 :: admin logged out time 2024-07-21 12:57:22.935 token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjAuMDQ3MiwidXNlcm5hbWUiOiJhZG1pbiIsIm5hbWVoYXNoIjoiJDJiJDEwJG8zNU8zQUFtYXBEbGs2NnFjUDZkRnVORHhDem5vV0NUR1BFMUtkRERaUjB0SEhjL2h1Um9LIiwiaWF0IjoxNzIxNTUyMjY3fQ.6bhk0lQeN0no2sn3fTzpB78ztr7TmoOfDcIbx9CgTew"
+}
+{
+  "message": "0.0999 :: admin logged in time 2024-07-21 12:58:42.834 Token :: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjAuMDk5OSwidXNlcm5hbWUiOiJhZG1pbiIsIm5hbWVoYXNoIjoiJDJiJDEwJHlpZWx0d3R0R1dGM3EyNTJ4am9jZk9BUW9yUGtGVld5OXdldmJ0eEF2allWVFQxVnVOOFNpIiwiaWF0IjoxNzIxNTUyMzMwfQ.rB8ArNkbcboccTKeAZbOxmzmuRApIqXCk1-KCYqkZb0"
+}
+{
+  "message": "0.0999 :: admin logged out time 2024-07-21 12:58:42.834 token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjAuMDk5OSwidXNlcm5hbWUiOiJhZG1pbiIsIm5hbWVoYXNoIjoiJDJiJDEwJHlpZWx0d3R0R1dGM3EyNTJ4am9jZk9BUW9yUGtGVld5OXdldmJ0eEF2allWVFQxVnVOOFNpIiwiaWF0IjoxNzIxNTUyMzMwfQ.rB8ArNkbcboccTKeAZbOxmzmuRApIqXCk1-KCYqkZb0"
+}
+{
+  "message": "0.0306 :: admin logged in time 2024-07-21 13:00:02.816 Token :: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjAuMDMwNiwidXNlcm5hbWUiOiJhZG1pbiIsIm5hbWVoYXNoIjoiJDJiJDEwJEhFQVdoOWtEbXUzSkVpSGZKSWZiRU8uUGVRcWpaazAvenFNbHhDL2cwMFdqWDBXVGR4NWdDIiwiaWF0IjoxNzIxNTUyNDEyfQ.bFrdhHisXA9fpgHzmbXqZR3zgIfSbnjJY39SHDNdRqE"
+}
+{
+  "message": "0.0306 :: admin logged out time 2024-07-21 13:05:24.762 token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjAuMDMwNiwidXNlcm5hbWUiOiJhZG1pbiIsIm5hbWVoYXNoIjoiJDJiJDEwJEhFQVdoOWtEbXUzSkVpSGZKSWZiRU8uUGVRcWpaazAvenFNbHhDL2cwMFdqWDBXVGR4NWdDIiwiaWF0IjoxNzIxNTUyNDEyfQ.bFrdhHisXA9fpgHzmbXqZR3zgIfSbnjJY39SHDNdRqE"
+}
+{
+  "message": "0.0268 :: admin logged in time 2024-07-21 13:08:33.195 Token :: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjAuMDI2OCwidXNlcm5hbWUiOiJhZG1pbiIsIm5hbWVoYXNoIjoiJDJiJDEwJDA3ZWltUTRsazlHQkZSdUp5UFBFa082cVh6QzlDZUdLZTJ5aEx4R2tRcjhyYXVhdHI1VDdDIiwiaWF0IjoxNzIxNTUyOTIwfQ.8wllkgLOL08YKK64IVE1JO4qnqRipjaRicHEqJo3rBM"
+}
+{
+  "message": "0.0268 :: admin logged out time 2024-07-21 13:08:33.195 token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjAuMDI2OCwidXNlcm5hbWUiOiJhZG1pbiIsIm5hbWVoYXNoIjoiJDJiJDEwJDA3ZWltUTRsazlHQkZSdUp5UFBFa082cVh6QzlDZUdLZTJ5aEx4R2tRcjhyYXVhdHI1VDdDIiwiaWF0IjoxNzIxNTUyOTIwfQ.8wllkgLOL08YKK64IVE1JO4qnqRipjaRicHEqJo3rBM"
+}
+{
+  "message": "0.099 :: admin logged in time 2024-07-21 16:13:58.222 Token :: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjAuMDk5LCJ1c2VybmFtZSI6ImFkbWluIiwibmFtZWhhc2giOiIkMmIkMTAkZXVyWjNBTWJaRTZUWlloNlZHNkZ5dVdvR2VXY0NJL3dMT1BNemxjeEt6WUlHVjJOWW82cG0iLCJpYXQiOjE3MjE1NjQzMjh9.YByYSpiEEn5hZ-rzvuJTxpI7S0INKv63PinhHga_Ei0"
+}
+{
+  "message": "0.099 :: admin logged out time 2024-07-21 16:13:58.222 token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjAuMDk5LCJ1c2VybmFtZSI6ImFkbWluIiwibmFtZWhhc2giOiIkMmIkMTAkZXVyWjNBTWJaRTZUWlloNlZHNkZ5dVdvR2VXY0NJL3dMT1BNemxjeEt6WUlHVjJOWW82cG0iLCJpYXQiOjE3MjE1NjQzMjh9.YByYSpiEEn5hZ-rzvuJTxpI7S0INKv63PinhHga_Ei0"
+}
+{
+  "message": "0.0617 :: admin logged in time 2024-07-21 16:13:58.222 Token :: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjAuMDYxNywidXNlcm5hbWUiOiJhZG1pbiIsIm5hbWVoYXNoIjoiJDJiJDEwJEdsTGN4Nm5hVHIydU1ub3pkWkZ6Yy5UM1BhcUlMTVJSQzBjOFlCcVhZaVd0ZTdwUWhTYU95IiwiaWF0IjoxNzIxNTY3MDA2fQ.aBszAaergfbHpyP75PrfLkeRkJFhXZJyNO5UA0g43BA"
+}
+{
+  "message": "0.0309 :: admin logged in time 2024-07-21 18:39:29.961 Token :: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjAuMDMwOSwidXNlcm5hbWUiOiJhZG1pbiIsIm5hbWVoYXNoIjoiJDJiJDEwJG5nV1BMNmhhTklrNlc4dnRhdlBaa09QV0FpNVZoaTFiRWV1dk1xZVpSLkRSaTBTVHhqb0tHIiwiaWF0IjoxNzIxNTcyODMzfQ.rHKXdLReRek2_YcgaB1zUoVLn5dLIN52__UFUVUysSk"
+}

@@ -260,9 +260,110 @@ router.post("/check",async (req,res)=>{
     const logData = {
       message: `${usrID} :: ${usrHash} tried to change or login ${detailedTime} IP ${clientIp} token:${token}`,
     };
-    writeLog("../data/admin-danger.log")
+    writeLog("../data/admin-danger.log",logData)
     console.log("disallowed")
     res.status(200).json({message:"User Not Allowed"})
   }
 })
+
+
+
+router.post("/products/new",async (req,res)=>{
+  const data = req.body
+  console.log(data)
+  const id = data.id
+  const name = data.name || "not given"
+  const description = data.description || "not given"
+  const price = parseInt(data.price) || 0
+  const stock = parseInt(data.stock) || 0
+  const img_link = data.img_link
+  try {
+    const connection = await connectionProductsPool.getConnection(); // Get a connection from the pool
+
+    try {
+      // Sanitize user input to prevent SQL injection (highly recommended)
+      const sanitizedName = connection.escape(name); // Escape user input for safe execution
+      const sanitizedDescription = connection.escape(description);
+      const sanitizedPrice = parseFloat(price); // Ensure price is a number
+      const sanitizedStock = parseInt(stock); // Ensure stock is an integer
+      const sanitizedImgLink = connection.escape(img_link);
+    
+      // Construct the UPDATE query with prepared statements
+      const updateQuery = `
+      INSERT INTO products (name, description, price, stock, img_link)
+      VALUES (?, ?, ?, ?, ?)
+    `;
+  
+    
+      // Execute the query with sanitized data
+      const [updateResult] = await connection.query(updateQuery, [
+        sanitizedName,
+        sanitizedDescription,
+        sanitizedPrice,
+        sanitizedStock,
+        sanitizedImgLink,
+      ]);
+    
+      console.log("Product updated successfully:", updateResult);
+    } catch (error) {
+      console.error("Error updating product:", error);
+      // Handle errors appropriately (e.g., rollback transaction, return error response)
+    } finally {
+      // Release the connection back to the pool
+      connection.release();
+    }
+    
+
+
+
+    res.status(200).json({ message: "Changed" });
+  } catch (error) {
+    console.error("Error updating product:", error);
+    res.status(500).json({ message: "Error updating product" });
+  }
+})
+
+
+
+router.post("/products/delete",async(req,res)=>{
+  const productId = req.body.id; // Assuming the product ID is in the request body
+
+  if (!productId) {
+    return res.status(400).json({ message: "Missing product ID" });
+  }
+
+  const deleteQuery = `DELETE FROM products WHERE id = ?`;
+
+  try {
+    const [deleteResult] = await connectionProductsPool.query(deleteQuery, [productId]);
+    console.log("Product deleted:", deleteResult);
+
+    res.status(200).json({ message: "Product deleted successfully" });
+  } catch (error) {
+    console.error("Error deleting product:", error);
+    res.status(500).json({ message: "Error deleting product" });
+  }
+})
+router.post("/users/delete",async(req,res)=>{
+  const productId = req.body.name; // Assuming the product ID is in the request body
+
+  if (!productId) {
+    return res.status(400).json({ message: "Missing product ID" });
+  }
+
+  const deleteQuery = `DELETE FROM users WHERE id = ?`;
+
+  try {
+    const [deleteResult] = await connectionProductsPool.query(deleteQuery, [productId]);
+    console.log("Product deleted:", deleteResult);
+
+    res.status(200).json({ message: "Product deleted successfully" });
+  } catch (error) {
+    console.error("Error deleting product:", error);
+    res.status(500).json({ message: "Error deleting product" });
+  }
+})
+
+
+
 module.exports =router
