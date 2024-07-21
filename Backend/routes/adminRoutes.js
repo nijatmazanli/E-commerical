@@ -5,13 +5,38 @@ const mysql = require("mysql2/promise");
 const bcrypt = require("bcrypt"); // Password hashing library
 const jwt = require("jsonwebtoken");
 const cors = require("cors"); // Assuming you need CORS for frontend requests
-const { body, validationResult } = require('express-validator');
+const { body, validationResult } = require("express-validator");
+const { decrypt } = require("dotenv");
 
 require("dotenv").config(); // Load environment variables at the beginning of your application
 
+const now = new Date();
+const year = now.getFullYear();
+const month = now.getMonth() + 1;
+const day = now.getDate();
+const hours = now.getHours().toString().padStart(2, '0');
+const minutes = now.getMinutes().toString().padStart(2, '0');
+const seconds = now.getSeconds().toString().padStart(2, '0');
+const milliseconds = now.getMilliseconds().toString().padStart(3, '0');
+
+const detailedTime = `${year}-${month.toString().padStart(2, '0')}-${day.toString().padStart(2, '0')} ${hours}:${minutes}:${seconds}.${milliseconds}`;
+
+
+
+const productsDbName = process.env.products_db_name;
+const productssDbPassword = process.env.products_db_password
+const db_host = process.env.db_host
+const prd_db_profile = process.env.username_pr
+const connectionProductsConfig = {
+  host: db_host, // Replace with your MySQL host (localhost if local)
+  user: prd_db_profile, // Replace with your MySQL username
+  password: productssDbPassword, // Replace with your MySQL password
+  database: productsDbName, // Replace with your database name
+};
+
+
 const usersDbName = process.env.users_db_name;
 const usersDbPassword = process.env.users_db_password;
-const db_host = process.env.db_host;
 const usr_db_profile = process.env.username;
 const date = new Date();
 const generateToken = (userId, username, namehash) => {
@@ -32,6 +57,7 @@ const connectionUserConfig = {
   database: usersDbName, // Replace with your database name
 };
 const connectionUserPool = mysql.createPool(connectionUserConfig);
+const connectionProductsPool = mysql.createPool(connectionProductsConfig);
 
 const readData = () => {
   return JSON.parse(fs.readFileSync("./data/users.json"));
@@ -98,8 +124,7 @@ function writeLog(filePath, data) {
 // Add body-parser middleware to parse JSON data from requests
 router.use(bodyParser.json()); // Assuming you're using the main app instance (app)
 
-router.post("/login/", async (req, res) => 
- {
+router.post("/login/", async (req, res) => {
   console.log(process.env.JWT_SECRET);
   const data = req.body; // Access data from req.body after body-parser parsing
   const username = data.name; // Assuming username for login
@@ -111,9 +136,9 @@ router.post("/login/", async (req, res) =>
   // if (!errors.isEmpty()) {
   //   return res.status(400).json({ errors: errors.mapped() });
   // }
-  
+
   try {
-    const sql = `SELECT * FROM users WHERE name = ?`;
+    const sql = `SELECT id,password FROM users WHERE name = ?`;
     const [rows] = await connectionUserPool.query(sql, [username]); // Use prepared statements
     console.log(rows);
     if (!rows.length) {
@@ -134,20 +159,12 @@ router.post("/login/", async (req, res) =>
       console.log(oldData);
       const token = generateToken(userId, username, namehash); // Generate JWT token
       const logData = {
-        message: `${userId} :: ${username} logged in time ${date.getTime}`,
+        message: `${userId} :: ${username} logged in time ${detailedTime} Token :: ${token}`,
       };
-      
-      writeLog("./data/app.log", logData);
-      console.log(rows[0])
-      const data = {
-        token:token,
-        username:username,
-        userId:userId,
-      }
-      const basket=rows[0].basket
-      const favorites=rows[0].favorites
-    
-      res.json({ message: "Login successful.", token,username,userId,basket,favorites});
+
+      writeLog("./data/admin.log", logData);
+
+      res.json({ message: "Login successful.", token, userId, username });
     } else {
       return res.status(200).json({ message: "Invalid username or password." });
     }
@@ -159,39 +176,10 @@ router.post("/login/", async (req, res) =>
     console.log("DSdd");
   }
 });
-
-router.post("/register", async (req, res) => {
-  const data = req.body; // Access data from req.body after body-parser parsing
-  console.log(data);
-  checkConnection();
-
-  try {
-    // Hash the password
-    const hash = await bcrypt.hash(data.password, 10); // Adjust salt rounds as needed
-
-    const insertQuery = `INSERT INTO users (name, surname, password) VALUES ("${data.name}","${data.surname}","${hash}")`;
-    const results = await connectionUserPool.query(insertQuery);
-    const logData = {
-      message: `${data.name} :: ${data.surname} registered time ${date.getTime} `,
-    };
-
-    writeLog("./data/app.log", logData);
-    res.json(results); // Send response after successful insertion
-  } catch (err) {
-    console.error(err);
-    res.status(500).json({ message: "Error registering user." });
-  }
-  // getdata()
-});
-
-router.post("/get-data", async (req, res) => {
-  const results = getdata();
-});
-
 router.post("/logout/log", async (req, res) => {
   const data = req.body; // Access user data if needed
   const logData = {
-    message: `${data.userId} :: ${data.username} logged out time ${data.token}`,
+    message: `${data.userId} :: ${data.username} logged out time ${detailedTime} token:${data.token}`,
   };
   const connection = await connectionUserPool.getConnection(); // Get a connection from the pool
   console.log(data)
@@ -204,11 +192,77 @@ router.post("/logout/log", async (req, res) => {
 
   console.log("Product updated successfully:", updateResult);
 
-  writeLog("./data/app.log", logData);
+ connection.release(); // Release t
+  writeLog("./data/admin.log", logData);
   res.status(200).json({ message: "Logged Succesfully" });
 });
 
-// router.post("/logout",(req,res)=>{
-//   logout()
-// })
-module.exports = router;
+router.post("/products/edit",async (req,res)=>{
+  const data = req.body
+  console.log(data)
+  const id = data.id
+  const name = data.name || "not given"
+  const description = data.description || "not given"
+  const price = parseInt(data.price) || 0
+  const stock = parseInt(data.stock) || 0
+  const img_link = data.img_link
+  try {
+    const connection = await connectionProductsPool.getConnection(); // Get a connection from the pool
+
+    // Sanitize user input to prevent SQL injection (highly recommended)
+  
+
+    const query = `UPDATE products SET name = ?, description = ?, price = ?, stock = ?, img_link = ? WHERE id = ?`;
+    const [updateResult] = await connection.query(query, [
+      name,
+      description,
+      price,
+      stock,
+      img_link,
+      id
+    ]);
+
+    console.log("Product updated successfully:", updateResult);
+
+   connection.release(); // Release the connection back to the pool
+
+    res.status(200).json({ message: "Changed" });
+  } catch (error) {
+    console.error("Error updating product:", error);
+    res.status(500).json({ message: "Error updating product" });
+  }
+})
+
+router.post("/check",async (req,res)=>{
+  const clientIp = req.ip; // Access the client's IP address
+
+  console.log(req.body, clientIp)
+
+  const data = req.body
+  const usrHash = data.username
+  const usrID = data.userID
+  const token = data.user
+
+  const decoded = jwt.verify(token, process.env.JWT_SECRET); // Verify and decode the token
+  console.log('Decoded JWT payload:', decoded);
+
+  if (decoded.userId == usrID && decoded.username == usrHash){
+    console.log("Checking hash...")
+    const isMatch = await bcrypt.compare(usrHash, decoded.namehash);
+    if (isMatch){
+    res.status(200).json({message:"Approved"})
+    }
+    else{
+      res.status(200).json({message:"User Not Allowed"})
+    }
+  }
+  else{
+    const logData = {
+      message: `${usrID} :: ${usrHash} tried to change or login ${detailedTime} IP ${clientIp} token:${token}`,
+    };
+    writeLog("../data/admin-danger.log")
+    console.log("disallowed")
+    res.status(200).json({message:"User Not Allowed"})
+  }
+})
+module.exports =router

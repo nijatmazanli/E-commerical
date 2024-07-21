@@ -1,6 +1,7 @@
 const loginContainer = document.querySelector(".ch-lg")
 createLoginOrLogout()
 
+const logoutButton = document.querySelector("#logout") || null;
 
 function createLoginOrLogout(){
   const isLogin = localStorage.getItem("user") || false;
@@ -8,9 +9,15 @@ function createLoginOrLogout(){
   if (isLogin) {
     const logout = document.createElement("button")
     logout.classList.add("ool")
-    logout.textContent = "Logout"
+    logout.textContent = "Profile"
 
     loginContainer.appendChild(logout)
+    const log_but = document.querySelector(".ool")
+    log_but.addEventListener("click",(e)=>{
+      e.preventDefault
+      console.log("Dsdds")
+      window.location.href = "./users/profile.html"
+    })
   }
   else{
     const login = document.createElement("button")
@@ -31,7 +38,6 @@ function createLoginOrLogout(){
 
   }
 }
-
 async function getData() {
   try {
     const response = await fetch("http://localhost:6688/products/all-products"); // Replace with your API endpoint

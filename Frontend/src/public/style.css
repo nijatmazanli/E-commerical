@@ -127,6 +127,8 @@ a::after{
 }
 .product-card{
   align-items: center;
+  min-width: 300px;
+  min-height: 300px;
 }
 section {
   align-items: center;

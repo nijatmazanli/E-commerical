@@ -51,7 +51,7 @@ async function getdata() {
 
     // Check if results is not empty before accessing elements
     if (results.length > 0) {
-      console.log(results[0]);
+      // console.log(results[0]);
       writeData(results[0]); // Write the first element only if it exists
     } else {
       console.log("No data found in the database.");
@@ -99,14 +99,21 @@ router.get("/", async(req, res) => {
 });
 router.get("/all-products", async (req, res) => {
   try {
-    
     const data = readData()
+  
     res.status(200).json(data)
   } catch (err) {
     console.error(err);
     res.status(500).json({ message: err.message || "Error retrieving products." });
   }
 });
+router.post("/update/products", async (req,res)=>{
+  await getdata()
+  res.status(200).json({message:"Updated database"})
+})
 
-
+router.delete("/delete",async(req,res)=>{
+  const data = req.data
+  console.log(data)
+})
 module.exports = router;

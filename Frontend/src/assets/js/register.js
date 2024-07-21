@@ -5,17 +5,21 @@ const surnames = document.querySelector("#surname");
 const passwd = document.querySelector("#password")
 const loginContainer = document.querySelector(".ch-lg")
 createLoginOrLogout()
-
-
 function createLoginOrLogout(){
   const isLogin = localStorage.getItem("user") || false;
 
   if (isLogin) {
     const logout = document.createElement("button")
     logout.classList.add("ool")
-    logout.textContent = "Logout"
+    logout.textContent = "Profile"
 
     loginContainer.appendChild(logout)
+    const log_but = document.querySelector(".ool")
+    log_but.addEventListener("click",(e)=>{
+      e.preventDefault
+      console.log("Dsdds")
+      window.location.href = "./users/profile.html"
+    })
   }
   else{
     const login = document.createElement("button")

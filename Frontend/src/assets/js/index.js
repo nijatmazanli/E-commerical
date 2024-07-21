@@ -1,6 +1,6 @@
 
 const productsContainer = document.querySelector(".products");
-const basket = JSON.parse(localStorage.getItem("basket")) || [];
+const basket = JSON.parse(localStorage.getItem("basket")) || "[]";
 const favorites = JSON.parse(localStorage.getItem("favorites")) || [];
 const loginContainer = document.querySelector(".ch-lg")
 const logoutButton = document.querySelector("#logout") || null;
@@ -8,30 +8,6 @@ const logoutButton = document.querySelector("#logout") || null;
 // console.log(logoutButton)
 createLoginOrLogout()
 
-async function logoutt(){
-
-    const dates = new Date()
-    console.log("Dsddsdsdsd")
-    const userData={
-      name:localStorage.getItem("username"),
-      date:dates.getTime(),
-      token:localStorage.getItem("user")
-    }
-    axios
-    .post(`http://localhost:6688/users/logout/log`, userData)
-    .then((response) => {
-      if (response.data.message == "Logged Succesfully" ){
-      localStorage.removeItem("user")
-      localStorage.removeItem("userID")
-      localStorage.removeItem("username")
-      console.log("dadadaaddad")
-      window.location.reload()
-      }
-      else{
-        console.log("Error ocurred in server side");
-      }
-    })
-}
 
 function createLoginOrLogout(){
   const isLogin = localStorage.getItem("user") || false;
@@ -39,14 +15,14 @@ function createLoginOrLogout(){
   if (isLogin) {
     const logout = document.createElement("button")
     logout.classList.add("ool")
-    logout.textContent = "Logout"
+    logout.textContent = "Profile"
 
     loginContainer.appendChild(logout)
     const log_but = document.querySelector(".ool")
     log_but.addEventListener("click",(e)=>{
       e.preventDefault
       console.log("Dsdds")
-      logoutt()
+      window.location.href = "./users/profile.html"
     })
   }
   else{
